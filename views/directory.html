@@ -1,0 +1,18 @@
+<div class="content">
+    <button ng-click="order = 'name'">Order By Name</button>
+    <button ng-click="order = 'favFood'">Order By Favorite Food</button>
+    <input type="text" ng-model="search" placeholder="Search for a teammate">
+    <ul>
+      <li ng-repeat="person in people | orderBy: order | filter: search" ng-show="person.available">
+        <h3>{{ person.name }} - {{ person.salary | currency: '£' }}</h3>
+        <div class="remove" ng-click="removePerson(person)">X</div>
+        <span>Favorite Food: {{ person.favFood  }}</span>
+      </li>
+    </ul>
+    <form ng-submit="addPerson()">
+      <input type="text" placeholder="name" ng-model="newperson.name">
+      <input type="text" placeholder="Favorite Food" ng-model="newperson.favFood">
+      <input type="text" placeholder="Salary" ng-model="newperson.salary">
+      <input type="submit" value="Add a teammate">
+    </form>
+</div>

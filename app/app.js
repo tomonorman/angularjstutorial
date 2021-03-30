@@ -1,5 +1,19 @@
 // Dependencies are stored inside of the array of the module
-var myTomoApp = angular.module('myTomoApp', []);
+var myTomoApp = angular.module('myTomoApp', ['ngRoute']);
+
+myTomoApp.config(['$routeProvider', function($routeProvider){
+
+  $routeProvider
+    .when('/home', {
+      templateUrl: 'views/home.html'
+    })
+    .when('/directory', {
+      templateUrl: 'views/directory.html',
+      controller: 'TomoController'
+    }).otherwise({
+      redirectTo: '/home'
+    });
+}]);
 
 myTomoApp.controller('TomoController', ['$scope',function($scope){
   
