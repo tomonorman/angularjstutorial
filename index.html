@@ -12,8 +12,11 @@
 <body>
   <div ng-controller="TomoController">
     <p>{{ message }}</p>
+    <input type="text" ng-model="search">
     <ul>
-      <li ng-repeat="person in people">{{ person }}</li>
+      <li ng-repeat="person in people | orderBy: 'name' | filter: search ">
+        {{ person.name }} - {{ person.salary | currency: '£' }}
+      </li>
     </ul>
   </div>
 </body>
