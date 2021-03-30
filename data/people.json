@@ -1,0 +1,21 @@
+[{
+  "name":"Tomo",
+  "favFood":"Fish and Chips",
+  "salary":50,
+  "available":true
+},{
+  "name":"Patrick",
+  "favFood":"Bagel",
+  "salary":40,
+  "available":false
+},{
+  "name":"Sam",
+  "favFood":"Burrito",
+  "salary":20,
+  "available":true
+},{
+  "name":"Snickers",
+  "favFood":"Big Mac",
+  "salary":10,
+  "available":true
+}]
