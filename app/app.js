@@ -5,7 +5,8 @@ myTomoApp.config(['$routeProvider', function($routeProvider){
 
   $routeProvider
     .when('/home', {
-      templateUrl: 'views/home.html'
+      templateUrl: 'views/home.html',
+      controller: 'TomoController'
     })
     .when('/directory', {
       templateUrl: 'views/directory.html',
@@ -13,6 +14,21 @@ myTomoApp.config(['$routeProvider', function($routeProvider){
     }).otherwise({
       redirectTo: '/home'
     });
+}]);
+
+myTomoApp.directive('randomPerson', [function(){
+
+  return {
+    restrict: 'E',
+    scope: {
+      people: '=',
+      title: '='
+    },
+    templateUrl: 'views/random.html',
+    controller: function($scope){
+      $scope.random = Math.floor(Math.random() * 4);
+    }
+  };
 }]);
 
 myTomoApp.controller('TomoController', ['$scope', '$http', function($scope, $http){
